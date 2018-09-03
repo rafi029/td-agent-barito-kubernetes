@@ -1,0 +1,15 @@
+image:
+  name: barito/td-agent-barito-kubernetes
+  tag: latest
+  pullPolicy: IfNotPresent
+
+tolerations: []
+
+updateStrategy: OnDelete
+
+rbac:
+  ## If true, create and use RBAC resources
+  create: false
+
+  ## Ignored if rbac.create is true
+  serviceAccountName: default

@@ -1,0 +1,15 @@
+{{- if .Values.rbac.create }}
+apiVersion: {{ template "rbac.apiVersion" . }}
+kind: ClusterRole
+metadata:
+  name: {{ template "td-agent-barito.fullname" . }}
+  labels:
+    app: {{ template "td-agent-barito.name" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+rules:
+- apiGroups: [""]
+  resources: ["namespaces", "pods"]
+  verbs: ["get", "list", "watch"]
+{{- end }}

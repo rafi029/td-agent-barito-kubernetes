@@ -1,0 +1,18 @@
+{{- if .Values.rbac.create -}}
+apiVersion: {{ template "rbac.apiVersion" . }}
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app: {{ template "td-agent-barito.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    release: {{ .Release.Name }}
+  name: {{ template "td-agent-barito.name" . }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: {{ .Values.rbac.serviceAccountName }}
+  namespace: {{ .Release.Namespace }}
+{{- end -}}

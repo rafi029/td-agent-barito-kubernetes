@@ -8,6 +8,18 @@ This image is designed to be used as a [daemonset](http://kubernetes.io/docs/adm
 
 Please check [Barito Docker Hub] (https://hub.docker.com/r/barito/td-agent-barito-kubernetes/) for ready to use  image.
 
+## Install plugin using kubectl
+
+`kubectl create -f td-agent-daemonset.yaml`
+
+## Install plugin using Helm Chart
+
+Go to `helm` directory, then execute `helm install .`
+
+### If using RBAC authorization
+
+Override `rbac.create` when installing, `helm install . --set rbac.create=true`
+
 ## Usage
 
 Sign in to BaritoMarket and find your Application. Barito `Application Secret` & `Produce URL` will be displayed on details page.
