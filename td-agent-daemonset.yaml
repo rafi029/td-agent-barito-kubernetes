@@ -63,7 +63,7 @@ spec:
     spec:
       serviceAccountName: td-agent-barito-daemonset
       containers:
-        - image: td-agent-barito-kubernetes:latest
+        - image: barito/td-agent-barito-kubernetes:latest
           # Uncomment this if you want to use local build
           #imagePullPolicy: Never
           name: td-agent-barito-daemonset
