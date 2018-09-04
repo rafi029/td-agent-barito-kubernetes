@@ -14,7 +14,13 @@ Please check [Barito Docker Hub] (https://hub.docker.com/r/barito/td-agent-barit
 
 ## Install plugin using Helm Chart
 
+### Option 1 
 Go to `helm` directory, then execute `helm install .`
+
+### Option 2
+
+- `helm repo add barito https://baritolog.github.io/helm-charts`
+- `helm install barito/td-agent-barito --name=my-app-name`
 
 ### If using RBAC authorization
 
