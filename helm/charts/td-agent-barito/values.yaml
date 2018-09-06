@@ -1,7 +1,7 @@
 image:
   name: barito/td-agent-barito-kubernetes
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 tolerations: []
 
