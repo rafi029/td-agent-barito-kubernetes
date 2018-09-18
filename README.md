@@ -38,11 +38,3 @@ annotations:
   barito.applicationSecret: "1234567890"
   barito.produceUrl: "http://some-host:some-port/produce"
 ```
-
-#### Docker tag
-* Replace `_YOUR_DOCKER_IMAGE_TAG_` with the docker image tag you will build from this repo.
-
-### Build and deploy
-* `docker build -t ${_YOUR_DOCKER_IMAGE_TAG_} .`
-* `docker push ${_YOUR_DOCKER_IMAGE_TAG_}`
-* `kubectl create -f td-agent-daemonset.yaml`
