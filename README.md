@@ -24,7 +24,7 @@ Go to `helm` directory, then execute `helm install .`
 
 ### If using RBAC authorization
 
-Override `rbac.create` when installing, `helm install . --set rbac.create=true`
+Override `rbac.create` when installing, `--set rbac.create=true`
 
 ## Usage
 
