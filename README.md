@@ -20,7 +20,7 @@ Go to `helm` directory, then execute `helm install .`
 ### Option 2
 
 - `helm repo add barito https://baritolog.github.io/helm-charts`
-- `helm install barito/td-agent-barito --name=my-app-name`
+- `helm install barito/td-agent-barito --name=td-agent-barito`
 
 ### If using RBAC authorization
 
@@ -33,8 +33,11 @@ Sign in to BaritoMarket and find your Application. Barito `Application Secret` &
 ### Adding Annotations
 * Add annotations to your Pod or Deployment in your kubernetes YAML files.
 ```shell
-annotations:
-  fluentd.active: "true"
-  barito.applicationSecret: "1234567890"
-  barito.produceUrl: "http://some-host:some-port/produce"
+spec:
+  template:
+    metadata:
+      annotations:
+        fluentd.active: "true"
+        barito.applicationSecret: "1234567890"
+        barito.produceUrl: "http://some-host:some-port/produce"
 ```
