@@ -4,7 +4,7 @@ apt-get update
 apt-get install -y -q --no-install-recommends \
   curl ca-certificates make g++ sudo bash
 
-/usr/bin/curl -sSL https://toolbelt.treasuredata.com/sh/install-ubuntu-xenial-td-agent2.sh | sh
+/usr/bin/curl -sSL https://toolbelt.treasuredata.com/sh/install-ubuntu-xenial-td-agent3.sh | sh
 
 sed -i -e "s/USER=td-agent/USER=root/" -e "s/GROUP=td-agent/GROUP=root/" /etc/init.d/td-agent
 
