@@ -18,10 +18,9 @@ spec:
           name: {{ template "td-agent-barito.fullname" . }}
           resources:
             limits:
-              memory: 200Mi
+              memory: {{ .Values.resources.limits.memory }}
             requests:
-              cpu: 100m
-              memory: 200Mi
+              memory: {{ .Values.resources.requests.memory }}
           volumeMounts:
             - mountPath: /var/log
               name: varlog

@@ -2,14 +2,17 @@ image:
   name: barito/td-agent-barito-kubernetes
   tag: 0.1.5
   pullPolicy: Always
-
 tolerations: []
-
 updateStrategy: OnDelete
 
 rbac:
   ## If true, create and use RBAC resources
   create: false
-
   ## Ignored if rbac.create is true
   serviceAccountName: default
+
+resources:
+  limits:
+    memory: 1Gi
+  requests:
+    memory: 512Mi
