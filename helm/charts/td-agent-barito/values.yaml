@@ -3,7 +3,7 @@ image:
   tag: 0.1.5
   pullPolicy: Always
 tolerations: []
-updateStrategy: OnDelete
+updateStrategy: RollingUpdate
 
 rbac:
   ## If true, create and use RBAC resources
