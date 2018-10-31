@@ -41,3 +41,7 @@ spec:
         barito.applicationSecret: "1234567890"
         barito.produceUrl: "http://some-host:some-port/produce"
 ```
+
+## Notes
+
+If not specified, DaemonSet will have memory limits `1 Gi` and memory requests `512Mi`, use `--set resources.limits.memory=XX` or `--set resources.requests.memory=XX` to override.
