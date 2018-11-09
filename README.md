@@ -8,6 +8,13 @@ This image is designed to be used as a [daemonset](http://kubernetes.io/docs/adm
 
 Please check [Barito Docker Hub] (https://hub.docker.com/r/barito/td-agent-barito-kubernetes/) for ready to use  image.
 
+## Add ConfigMap
+
+1. Rename `tdagentconfig.yaml.sample` file to `tdagentconfig.yaml`
+2. Modify `tdagentconfig.yaml` file based on your td-agent configuration
+3. Execute
+`kubectl apply -f tdagentconfig.yaml` 
+
 ## Install plugin using kubectl
 
 `kubectl create -f td-agent-daemonset.yaml`
@@ -30,7 +37,7 @@ Override `rbac.create` when installing, `--set rbac.create=true`
 
 Sign in to BaritoMarket and find your Application. Barito `Application Secret` & `Produce URL` will be displayed on details page.
 
-### Adding Annotations
+### Add Annotations
 * Add annotations to your Pod or Deployment in your kubernetes YAML files.
 ```shell
 spec:
