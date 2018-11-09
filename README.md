@@ -11,7 +11,18 @@ Please check [Barito Docker Hub] (https://hub.docker.com/r/barito/td-agent-barit
 ## Add ConfigMap
 
 1. Rename `tdagentconfig.yaml.sample` file to `tdagentconfig.yaml`
-2. Modify `tdagentconfig.yaml` file based on your td-agent configuration
+2. Add these lines of code right after the `</source>` tag:
+
+```
+<match kubernetes.**APP_NAME**>
+  @type file
+  path /var/log/baritolog
+</match>
+```
+
+> Notes:
+Match events tagged with `kubernetes.**APP_NAME**` and store them to `/var/log/baritolog` directory. @type: your output plugin type. path: your output path
+
 3. Execute
 `kubectl apply -f tdagentconfig.yaml` 
 

@@ -16,8 +16,3 @@ data:
       </parse>
       read_from_head false
     </source>
-
-    <match kubernetes.**>
-      @type file
-      path /var/log/baritolog
-    </match>
