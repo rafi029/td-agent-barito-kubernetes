@@ -29,7 +29,7 @@ spec:
             - mountPath: /var/lib/docker/containers
               name: varlibdockercontainers
             - mountPath: /etc/td-agent
-              name: td-agent-config
+              name: td-agent-barito-config
       volumes:
         - hostPath:
             path: /var/log
@@ -37,6 +37,6 @@ spec:
         - hostPath:
             path: /var/lib/docker/containers
           name: varlibdockercontainers
-        - name: td-agent-config
+        - name: td-agent-barito-config
           configMap:
-            name: td-agent-config
+            name: td-agent-barito-config

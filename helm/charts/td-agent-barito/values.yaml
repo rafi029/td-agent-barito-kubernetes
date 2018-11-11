@@ -16,3 +16,17 @@ resources:
     memory: 1Gi
   requests:
     memory: 512Mi
+
+defaultAgentOptions:
+  buffer:
+    flushAtShutdown: false
+    flushThreadCount: 8
+    flushThreadInterval: 1.0
+    flushThreadBurstInterval: 1.0
+    flushMode: interval
+    flushInterval: 1s
+    queuedChunksLimitSize: 1
+    overflowAction: drop_oldest_chunk
+    retryTimeout: 0s
+    retryMaxTimes: 0
+    disableChunkBackup: true
