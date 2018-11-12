@@ -4,12 +4,14 @@ metadata:
   labels:
     app: {{ template "td-agent-barito.name" . }}
   name: {{ template "td-agent-barito.fullname" . }}
+  namespace: {{ .Release.Namespace }}
 spec:
   template:
     metadata:
       labels:
         app: {{ template "td-agent-barito.name" . }}
         release: {{ .Release.Name }}
+      namespace: {{ .Release.Namespace }}
     spec:
       serviceAccountName: {{ if .Values.rbac.create }}{{ template "td-agent-barito.fullname" . }}{{ else }}"{{ .Values.rbac.serviceAccountName }}"{{ end }}
       containers:
@@ -26,6 +28,8 @@ spec:
               name: varlog
             - mountPath: /var/lib/docker/containers
               name: varlibdockercontainers
+            - mountPath: /etc/td-agent
+              name: td-agent-barito-config
       volumes:
         - hostPath:
             path: /var/log
@@ -33,3 +37,6 @@ spec:
         - hostPath:
             path: /var/lib/docker/containers
           name: varlibdockercontainers
+        - name: td-agent-barito-config
+          configMap:
+            name: td-agent-barito-config
