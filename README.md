@@ -33,6 +33,8 @@ apps:
     produceUrl: https://barito-router.my-domain.com/produce_batch
 ```
 
+> `name` is metadata name of your deployment
+
 Install using helm
 
 ```shell
