@@ -32,7 +32,7 @@ data:
     </filter>
 
     {{- range .Values.apps }}
-    <match kubernetes.**{{ .name }}**>
+    <match kubernetes.var.log.containers.{{ .name }}-**.log>
       @type barito_batch_k8s
       name {{ .name }}
       application_group_secret {{ .applicationGroupSecret }}
