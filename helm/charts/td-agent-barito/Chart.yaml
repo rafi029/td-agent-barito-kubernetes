@@ -2,4 +2,4 @@ apiVersion: v1
 name: td-agent-barito
 version: 0.2.0
 description: A Helm chart for Barito agent
-appVersion: v3.2.1
+appVersion: 0.2.0
