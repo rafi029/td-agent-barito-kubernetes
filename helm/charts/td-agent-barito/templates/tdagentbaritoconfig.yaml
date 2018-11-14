@@ -19,16 +19,22 @@ data:
 
     <filter kubernetes.**>
       @type kubernetes_metadata
-      annotation_match ["barito.+"]
+      annotation_match ["barito.+","fluent.+"]
       de_dot false
     </filter>
 
     <filter kubernetes.**>
       @type grep
-      <regexp>
-        key $["kubernetes"]["annotations"]["barito.active"]
-        pattern "^true$"
-      </regexp>
+      <or>
+        <regexp>
+          key $["kubernetes"]["annotations"]["barito.active"]
+          pattern "^true$"
+        </regexp>
+        <regexp>
+          key $["kubernetes"]["annotations"]["fluent.active"]
+          pattern "^true$"
+        </regexp>
+      </or>
     </filter>
 
     {{- range .Values.apps }}
