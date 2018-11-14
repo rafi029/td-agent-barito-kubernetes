@@ -12,6 +12,8 @@ spec:
         app: {{ template "td-agent-barito.name" . }}
         release: {{ .Release.Name }}
       namespace: {{ .Release.Namespace }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/tdagentbaritoconfig.yaml") . | sha256sum }}
     spec:
       serviceAccountName: {{ if .Values.rbac.create }}{{ template "td-agent-barito.fullname" . }}{{ else }}"{{ .Values.rbac.serviceAccountName }}"{{ end }}
       containers:
