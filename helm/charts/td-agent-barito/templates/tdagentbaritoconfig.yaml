@@ -19,7 +19,7 @@ data:
 
     <filter kubernetes.**>
       @type kubernetes_metadata
-      annotation_match ["barito.+","fluent.+"]
+      annotation_match ["barito.+","fluentd.+"]
       de_dot false
     </filter>
 
@@ -31,7 +31,7 @@ data:
           pattern "^true$"
         </regexp>
         <regexp>
-          key $["kubernetes"]["annotations"]["fluent.active"]
+          key $["kubernetes"]["annotations"]["fluentd.active"]
           pattern "^true$"
         </regexp>
       </or>
