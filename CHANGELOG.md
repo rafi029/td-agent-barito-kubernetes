@@ -1,5 +1,9 @@
 # Changelog
 
+**0.2.6**
+
+- Parameterize configmap so that multiple td-agent-barito-kubernetes can be installed
+
 **0.2.5**
 
 - Fix typo, supposed to be `fluentd.active = true` annotations
