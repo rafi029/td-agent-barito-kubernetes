@@ -41,4 +41,4 @@ spec:
           name: varlibdockercontainers
         - name: td-agent-barito-config
           configMap:
-            name: td-agent-barito-config
+            name: {{ template "td-agent-barito.fullname" . }}

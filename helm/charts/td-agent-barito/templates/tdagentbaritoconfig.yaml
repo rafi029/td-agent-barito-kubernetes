@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: td-agent-barito-config
+  name: {{ template "td-agent-barito.fullname" . }}
   namespace: {{ .Release.Namespace }}
 data:
   td-agent.conf: |
