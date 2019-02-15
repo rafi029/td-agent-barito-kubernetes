@@ -1,5 +1,9 @@
 # Changelog
 
+**0.2.7**
+
+- Remove the needs for adding annotation for barito agent to start capturing logs
+
 **0.2.6**
 
 - Parameterize configmap so that multiple td-agent-barito-kubernetes can be installed
