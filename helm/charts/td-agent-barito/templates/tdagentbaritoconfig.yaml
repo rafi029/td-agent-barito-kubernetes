@@ -17,26 +17,6 @@ data:
       read_from_head false
     </source>
 
-    <filter kubernetes.**>
-      @type kubernetes_metadata
-      annotation_match ["barito.+","fluentd.+"]
-      de_dot false
-    </filter>
-
-    <filter kubernetes.**>
-      @type grep
-      <or>
-        <regexp>
-          key $["kubernetes"]["annotations"]["barito.active"]
-          pattern "^true$"
-        </regexp>
-        <regexp>
-          key $["kubernetes"]["annotations"]["fluentd.active"]
-          pattern "^true$"
-        </regexp>
-      </or>
-    </filter>
-
     {{- range .Values.apps }}
     <match kubernetes.var.log.containers.{{ .name }}-**.log>
       @type barito_batch_k8s

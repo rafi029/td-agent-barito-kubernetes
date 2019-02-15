@@ -12,14 +12,12 @@ Sign in to BaritoMarket and find your Application Group. Barito `Application Gro
 
 ### Install Helm Chart
 
-Add our helm chart repo
-
+1. Add our helm chart repo
 ```shell
 helm repo add barito https://baritolog.github.io/helm-charts
 ```
 
-Create a custom yaml containing helm chart values to specify app that you want its logs to be forwarded, example:
-
+2. Create a custom yaml containing helm chart values to specify app that you want its logs to be forwarded, example:
 ```yaml
 # myApps.yaml
 apps:
@@ -35,27 +33,12 @@ apps:
 
 > `name` is metadata name of your deployment
 
-Install using helm
-
+3. Install using helm
 ```shell
 helm install barito/td-agent-barito --name=td-agent-barito --values=myApps.yaml
 ```
 
-### If using RBAC authorization
-
-Override `rbac.create` when installing, `--set rbac.create=true`
-
-### Add Annotations
-
-* Add annotations to your Pod or Deployment in your kubernetes YAML files to turn logging on or off.
-
-```shell
-spec:
-  template:
-    metadata:
-      annotations:
-        barito.active: "true"
-```
+Override `rbac.create` when installing: `--set rbac.create=true` if you are using RBAC authorization.
 
 ## Notes
 
