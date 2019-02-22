@@ -1,5 +1,9 @@
 # Changelog
 
+**0.2.8**
+
+- Re-introduce kubernetes filter, we should only remove the annotation match instead of the whole filter in the previous version.
+
 **0.2.7**
 
 - Remove the needs for adding annotation for barito agent to start capturing logs

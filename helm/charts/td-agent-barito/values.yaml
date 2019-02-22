@@ -1,6 +1,6 @@
 image:
   name: barito/td-agent-barito-kubernetes
-  tag: 0.2.7
+  tag: 0.2.8
   pullPolicy: Always
 tolerations: []
 updateStrategy: RollingUpdate
