@@ -17,6 +17,11 @@ data:
       read_from_head false
     </source>
 
+    <filter kubernetes.**>
+      @type kubernetes_metadata
+      de_dot false
+    </filter>
+
     {{- range .Values.apps }}
     <match kubernetes.var.log.containers.{{ .name }}-**.log>
       @type barito_batch_k8s
