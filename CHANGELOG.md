@@ -1,5 +1,9 @@
 # Changelog
 
+**0.2.9**
+
+- Add supports for tolerations, node selector and affinity configurations
+
 **0.2.8**
 
 - Re-introduce kubernetes filter, we should only remove the annotation match instead of the whole filter in the previous version.
