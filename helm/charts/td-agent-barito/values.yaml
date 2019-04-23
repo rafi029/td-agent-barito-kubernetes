@@ -3,6 +3,8 @@ image:
   tag: 0.2.8
   pullPolicy: Always
 tolerations: []
+nodeSelector: {}
+affinity: {}
 
 rbac:
   ## If true, create and use RBAC resources
