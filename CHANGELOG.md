@@ -1,5 +1,9 @@
 # Changelog
 
+**0.2.10**
+
+- Make RollingUpdate behaviour default when updating agent
+
 **0.2.9**
 
 - Add supports for tolerations, node selector and affinity configurations
