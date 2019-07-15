@@ -1,5 +1,9 @@
 # Changelog
 
+**0.2.11**
+
+- Add default app options
+
 **0.2.10**
 
 - Make RollingUpdate behaviour default when updating agent
