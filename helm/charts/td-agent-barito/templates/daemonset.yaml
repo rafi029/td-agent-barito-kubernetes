@@ -25,8 +25,10 @@ spec:
           resources:
             limits:
               memory: {{ .Values.resources.limits.memory }}
+              ephemeral-storage: {{ .Values.resources.limits.ephemeral-storage }}
             requests:
               memory: {{ .Values.resources.requests.memory }}
+              ephemeral-storage: {{ .Values.resources.requests.ephemeral-storage }}
           volumeMounts:
             - mountPath: /var/log
               name: varlog
