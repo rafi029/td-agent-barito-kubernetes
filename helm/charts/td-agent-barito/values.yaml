@@ -14,9 +14,11 @@ rbac:
 
 resources:
   limits:
-    memory: 1Gi
+    cpu: 1Gi
+    memory: 2Gi
   requests:
-    memory: 512Mi
+    cpu: 512Mi
+    memory: 1Gi
 
 defaultAgentOptions:
   buffer:
