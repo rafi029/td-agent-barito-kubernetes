@@ -16,9 +16,11 @@ resources:
   limits:
     cpu: 1Gi
     memory: 2Gi
+    ephemeral-storage: 6Gi
   requests:
     cpu: 512Mi
     memory: 1Gi
+    ephemeral-storage: 4Gi
 
 defaultAgentOptions:
   buffer:
