@@ -15,8 +15,10 @@ rbac:
 resources:
   limits:
     memory: 1Gi
+    ephemeral-storage: 6Gi
   requests:
     memory: 512Mi
+    ephemeral-storage: 4Gi
 
 defaultAgentOptions:
   buffer:
