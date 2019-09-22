@@ -14,7 +14,11 @@ data:
       <parse>
         @type none
       </parse>
-      read_from_head false
+      {{- if .readFromHead }}
+      read_from_head {{ .readFromHead }}
+      {{- else }}
+      read_from_head {{ $.Values.defaultAppOptions.readFromHead }}
+      {{- end }}
     </source>
 
     <filter kubernetes.**>
