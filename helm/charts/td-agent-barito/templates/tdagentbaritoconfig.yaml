@@ -17,7 +17,7 @@ data:
       {{- if .readFromHead }}
       read_from_head {{ .readFromHead }}
       {{- else }}
-      read_from_head {{ $.Values.defaultAppOptions.readFromHead }}
+      read_from_head {{ $.Values.defaultAppOptions.buffer.readFromHead }}
       {{- end }}
     </source>
 
