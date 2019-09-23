@@ -14,10 +14,12 @@ rbac:
 
 resources:
   limits:
-    memory: 1Gi
+    cpu: 1Gi
+    memory: 2Gi
     ephemeral-storage: 6Gi
   requests:
-    memory: 512Mi
+    cpu: 512Mi
+    memory: 1Gi
     ephemeral-storage: 4Gi
 
 defaultAgentOptions:

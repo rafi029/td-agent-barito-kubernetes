@@ -24,9 +24,11 @@ spec:
           name: {{ template "td-agent-barito.fullname" . }}
           resources:
             limits:
+              cpu: {{ .Values.resources.limits.cpu }}
               memory: {{ .Values.resources.limits.memory }}
               ephemeral-storage: {{ .Values.resources.limits.ephemeral-storage }}
             requests:
+              cpu: {{ .Values.resources.requests.cpu }}
               memory: {{ .Values.resources.requests.memory }}
               ephemeral-storage: {{ .Values.resources.requests.ephemeral-storage }}
           volumeMounts:
