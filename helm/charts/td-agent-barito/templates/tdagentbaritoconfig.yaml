@@ -14,10 +14,10 @@ data:
       <parse>
         @type none
       </parse>
-      {{- if .readFromHead }}
-      read_from_head {{ .readFromHead }}
+      {{- if .Values.readFromHead }}
+      read_from_head {{ .Values.readFromHead }}
       {{- else }}
-      read_from_head {{ $.Values.defaultAppOptions.buffer.readFromHead }}
+      read_from_head false
       {{- end }}
     </source>
 

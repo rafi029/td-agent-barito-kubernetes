@@ -23,7 +23,7 @@ helm repo add barito https://baritolog.github.io/helm-charts
 defaultAppOptions:
   applicationGroupSecret: abc
   produceUrl: https://barito-router.my-domain.com/produce_batch
-  readFromHead: false
+readFromHead: true
 apps:
   - name: my-app-1
     baritoAppName: My App 1
@@ -33,7 +33,7 @@ apps:
     baritoAppName: My App 3
     applicationGroupSecret: xyz
     produceUrl: https://barito-router.other-domain.com/produce_batch
-    readFromHead: true
+    
 ```
 
 > `name` is metadata name of your deployment
