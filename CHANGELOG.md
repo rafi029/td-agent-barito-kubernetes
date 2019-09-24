@@ -1,5 +1,8 @@
 # Changelog
 
+**0.2.14**
+- Fix typo for ephemeralStorage key
+
 **0.2.13**
 - Adjust default value for cpu resource request limit, change default value for request is 500m and for limit is 2
 
