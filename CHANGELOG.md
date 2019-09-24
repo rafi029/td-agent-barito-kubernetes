@@ -1,5 +1,8 @@
 # Changelog
 
+**0.2.13**
+- Adjust default value for cpu resource request limit, change default value for request is 500m and for limit is 2
+
 **0.2.12**
 
 - Add ephemeral-storage resource request limit, with default value for request is 4Gi and for limit is 6Gi
