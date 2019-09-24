@@ -48,4 +48,9 @@ Override `rbac.create` when installing: `--set rbac.create=true` if you are usin
 
 ## Notes
 
-If not specified, DaemonSet will have memory limits of `1 Gi` and memory requests `512Mi`. Use `--set resources.limits.memory=XX` or `--set resources.requests.memory=XX` to override.
+If not specified, 
+- DaemonSet will have memory limits of `2 Gi` and memory requests `1 Gi`. Use `--set resources.limits.memory=XX` or `--set resources.requests.memory=XX` to override.
+
+- DaemonSet will have cpu limits of `1 Gi` and cpu requests `512 Mi`. Use `--set resources.limits.cpu=XX` or `--set resources.requests.cpu=XX` to override.
+
+- DaemonSet will have ephemeral-storage limits of `6 Gi` and ephemeral-storage requests `4 Gi`. Use `--set resources.limits.ephemeral-storage=XX` or `--set resources.requests.ephemeral-storage=XX` to override.

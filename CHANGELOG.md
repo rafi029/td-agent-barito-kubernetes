@@ -1,5 +1,12 @@
 # Changelog
 
+**0.2.12**
+
+- Add ephemeral-storage resource request limit, with default value for request is 4Gi and for limit is 6Gi
+- Add cpu resource request limit, with default value for request is 512Mi and for limit is 1Gi
+- Adjust default value for memory resource request limit, change default value for request is 1Gi and for limit is 2Gi
+- Add supports for read_from_head on defaultAppOptions and default value is false
+
 **0.2.11**
 
 - Add default app options
