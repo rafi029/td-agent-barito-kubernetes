@@ -2,6 +2,7 @@
 
 **0.2.14**
 - Fix typo for ephemeralStorage key
+- Set true for read_from_head default value
 
 **0.2.13**
 - Adjust default value for cpu resource request limit, change default value for request is 500m and for limit is 2

@@ -23,7 +23,6 @@ helm repo add barito https://baritolog.github.io/helm-charts
 defaultAppOptions:
   applicationGroupSecret: abc
   produceUrl: https://barito-router.my-domain.com/produce_batch
-readFromHead: true
 apps:
   - name: my-app-1
     baritoAppName: My App 1
@@ -37,7 +36,6 @@ apps:
 ```
 
 > `name` is metadata name of your deployment
-> `readFromHead` is allowing barito-agent to read the log from head
 
 3. Install using helm
 ```shell
