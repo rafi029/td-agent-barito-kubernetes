@@ -1,5 +1,8 @@
 # Changelog
 
+**0.2.15**
+- Add cluster_name value from kubernetes
+  
 **0.2.14**
 - Fix typo for ephemeralStorage key
 - Set true for read_from_head default value
