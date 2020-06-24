@@ -1,13 +1,20 @@
 # Changelog
 
+**0.2.16**
+
+- Add logic to handle log with cri-o format
+
 **0.2.15**
+
 - Add cluster_name value from kubernetes
-  
+
 **0.2.14**
+
 - Fix typo for ephemeralStorage key
 - Set true for read_from_head default value
 
 **0.2.13**
+
 - Adjust default value for cpu resource request limit, change default value for request is 500m and for limit is 2
 
 **0.2.12**
