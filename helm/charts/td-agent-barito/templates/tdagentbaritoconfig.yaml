@@ -14,7 +14,7 @@ data:
       <parse>
         {{- if .Values.useCRIFormat }}
         @type regexp
-        expression /^(?<time>.+) (?<stream>std(?:out|err)) (?<flag>[FP]) (?<log>.*)$/
+        expression /^(?<time>.+) (?<stream>std(?:out|err)) (?<flag>[FP]) (?<message>.*)$/
         time_key time
         time_format %Y-%m-%dT%H:%M:%S.%N%:z
         {{- else }}
