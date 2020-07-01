@@ -1,5 +1,9 @@
 # Changelog
 
+**0.2.17**
+
+- Fix regex mapping
+
 **0.2.16**
 
 - Add logic to handle log with cri-o format
