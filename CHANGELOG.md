@@ -1,5 +1,9 @@
 # Changelog
 
+**0.3.0**
+
+- Add tini and auto reload configmap
+
 **0.2.17**
 
 - Fix regex mapping

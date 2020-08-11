@@ -13,4 +13,4 @@ RUN /tmp/build.sh
 ENV LD_PRELOAD /opt/td-agent/embedded/lib/libjemalloc.so
 
 # Run the td-agent service.
-ENTRYPOINT ["td-agent"]
+ENTRYPOINT ["tini", "-v", "--", "watchexec", "-v", "-w", "/etc/td-agent", "-n", "-s", "SIGHUP", "td-agent"]
