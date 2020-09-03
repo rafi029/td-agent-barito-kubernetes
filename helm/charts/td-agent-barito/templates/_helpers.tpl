@@ -41,3 +41,14 @@ Return the appropriate apiVersion for RBAC APIs.
 "rbac.authorization.k8s.io/v1beta1"
 {{- end -}}
 {{- end -}}
+
+{{/*
+Return the appropriate apiVersion for Daemonset APIs.
+*/}}
+{{- define "daemonset.apiVersion" -}}
+{{- if semverCompare ">=1.16" .Capabilities.KubeVersion.GitVersion -}}
+"apps/v1"
+{{- else -}}
+"extensions/v1beta1"
+{{- end -}}
+{{- end -}}
