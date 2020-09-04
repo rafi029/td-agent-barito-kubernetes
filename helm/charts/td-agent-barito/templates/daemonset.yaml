@@ -6,6 +6,11 @@ metadata:
   name: {{ template "td-agent-barito.fullname" . }}
   namespace: {{ .Release.Namespace }}
 spec:
+{{- if semverCompare ">=1.16" .Capabilities.KubeVersion.GitVersion }}
+  selector:
+    matchLabels:
+      app: {{ template "td-agent-barito.name" . }}
+{{- end }}
   updateStrategy:
     type: RollingUpdate
   template:
