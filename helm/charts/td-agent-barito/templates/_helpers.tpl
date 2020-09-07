@@ -46,7 +46,7 @@ Return the appropriate apiVersion for RBAC APIs.
 Return the appropriate apiVersion for Daemonset APIs.
 */}}
 {{- define "daemonset.apiVersion" -}}
-{{- if semverCompare ">=1.16" .Capabilities.KubeVersion.GitVersion -}}
+{{- if semverCompare ">=1.16.0-0" .Capabilities.KubeVersion.GitVersion -}}
 "apps/v1"
 {{- else -}}
 "extensions/v1beta1"
