@@ -24,7 +24,7 @@ resources:
 
 defaultAgentOptions:
   buffer:
-    flushAtShutdown: false
+    flushAtShutdown: true
     flushThreadCount: 8
     flushThreadInterval: 1.0
     flushThreadBurstInterval: 1.0
@@ -33,7 +33,10 @@ defaultAgentOptions:
     queuedChunksLimitSize: 1
     overflowAction: drop_oldest_chunk
     retryTimeout: 0s
-    retryMaxTimes: 0
+    retryMaxTimes: 3
+    retryType: exponential_backoff
+    retryWait: 1s
+    retryExponentialBackoffBase: 2
     disableChunkBackup: true
 
 useCRIFormat: false
