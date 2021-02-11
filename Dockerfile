@@ -1,7 +1,7 @@
 FROM gcr.io/google_containers/ubuntu-slim:0.6
 
 # Ensure there are enough file descriptors for running td-agent.
-RUN ulimit -n 65536
+RUN ulimit -n 100000
 
 # Disable prompts from apt.
 ENV DEBIAN_FRONTEND noninteractive
