@@ -30,7 +30,11 @@ data:
     </filter>
 
     {{- range .Values.apps }}
+    {{- if .namespace }}
+    <match kubernetes.var.log.containers.{{ .name }}-**{{ .namespace }}**.log>
+    {{- else }}
     <match kubernetes.var.log.containers.{{ .name }}-**.log>
+    {{- end }}
       @type barito_batch_k8s
       name {{ .name }}
       cluster_name {{ $.Values.cluster_name }}
