@@ -1,6 +1,6 @@
 image:
   name: barito/td-agent-barito-kubernetes
-  tag: 0.2.16
+  tag: 0.4.1
   pullPolicy: Always
 tolerations: []
 nodeSelector: {}
