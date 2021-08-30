@@ -31,7 +31,7 @@ data:
 
     {{- range .Values.apps }}
     {{- if .namespace }}
-    <match kubernetes.var.log.containers.{{ .name }}-**{{ .namespace }}**.log>
+    <match kubernetes.var.log.containers.{{ .name }}-**_{{ .namespace }}_**.log>
     {{- else }}
     <match kubernetes.var.log.containers.{{ .name }}-**.log>
     {{- end }}
