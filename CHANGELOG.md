@@ -1,5 +1,17 @@
 # Changelog
 
+**0.4.2**
+
+- wrap namespace regex with `_` to avoid capturing similar namespaces
+
+**0.4.1**
+
+- support separation of log by namespace on top of app name
+
+**0.4.0**
+
+- move to td-agent 4
+
 **0.3.0**
 
 - Add tini and auto reload configmap
