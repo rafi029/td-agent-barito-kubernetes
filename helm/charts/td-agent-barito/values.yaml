@@ -40,3 +40,23 @@ defaultAgentOptions:
     disableChunkBackup: true
 
 useCRIFormat: false
+
+extraConfig: {}
+  # - config: |-
+  #     <source>
+  #       @type tail
+  #       path           /var/log/messages
+  #       pos_file       /var/log/messages.pos
+  #       read_from_head true
+  #       tag            syslog
+  #       <parse>
+  #         @type regexp
+  #           expression  ^(?<time>[^ ]*.+[^ ]* [^ ]*) (?<host>[^ ]*) (?<process>[^ ]*): (?<message>.*)$
+  #           time_format %b  %d %H:%M:%S
+  #           time_key    time
+  #       </parse>
+  #     </source>
+
+  #     <match syslog>
+  #       @type stdout
+  #     </match>

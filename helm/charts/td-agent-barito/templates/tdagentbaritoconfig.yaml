@@ -70,3 +70,7 @@ data:
       </buffer>
     </match>
     {{- end }}
+
+    {{- range .Values.extraConfig }}
+    {{ .config | nindent 4 }}
+    {{- end }}
