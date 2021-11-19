@@ -1,6 +1,9 @@
 # Changelog
 
-**0.3.0**
+**0.2.22**
+- add extraVolumes & extraVolumeMounts parameters
+
+**0.2.18**
 
 - Add tini and auto reload configmap
 
