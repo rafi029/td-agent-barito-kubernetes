@@ -43,6 +43,9 @@ spec:
               name: varlibdockercontainers
             - mountPath: /etc/td-agent
               name: td-agent-barito-config
+            {{- if .Values.extraVolumeMounts }}
+            {{ toYaml .Values.extraVolumeMounts | trim | nindent 12 }}
+            {{ end }}
       volumes:
         - hostPath:
             path: /var/log
@@ -53,6 +56,9 @@ spec:
         - name: td-agent-barito-config
           configMap:
             name: {{ template "td-agent-barito.fullname" . }}
+        {{- if .Values.extraVolumes  }}
+        {{ toYaml .Values.extraVolumes | trim | nindent 8 }}
+        {{ end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
