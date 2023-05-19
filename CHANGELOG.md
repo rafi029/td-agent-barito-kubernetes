@@ -1,5 +1,8 @@
 # Changelog
 
+**0.2.23**
+- update image tag override & bump default image tag
+
 **0.2.22**
 - add extraVolumes & extraVolumeMounts parameters
 
