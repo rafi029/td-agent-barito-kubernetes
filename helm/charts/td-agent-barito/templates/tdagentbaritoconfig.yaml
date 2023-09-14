@@ -29,6 +29,10 @@ data:
       de_dot false
     </filter>
 
+    <source>
+      @type prometheus
+    </source>
+
     {{- range .Values.apps }}
     {{- if .namespace }}
     <match kubernetes.var.log.containers.{{ .name }}-**_{{ .namespace }}_**.log>

@@ -22,11 +22,23 @@ spec:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/tdagentbaritoconfig.yaml") . | sha256sum }}
     spec:
+      {{- if .Values.priorityClassName }}
+      priorityClassName: {{ .Values.priorityClassName }}
+      {{- end }}
       serviceAccountName: {{ if .Values.rbac.create }}{{ template "td-agent-barito.fullname" . }}{{ else }}"{{ .Values.rbac.serviceAccountName }}"{{ end }}
       containers:
         - image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{.Values.image.pullPolicy}}
           name: {{ template "td-agent-barito.fullname" . }}
+          ports:
+            - name: metrics
+              containerPort: 24231
+              protocol: TCP
+          livenessProbe:
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+            tcpSocket:
+              port: metrics
           resources:
             limits:
               cpu: {{ .Values.resources.limits.cpu }}
