@@ -1,5 +1,9 @@
 # Changelog
 
+**0.2.24**
+- add priorityClassName parameters
+- expose prometheus port and configure livenessProbe
+
 **0.2.23**
 - update image tag override & bump default image tag
 
