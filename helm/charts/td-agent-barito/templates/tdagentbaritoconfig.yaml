@@ -33,6 +33,10 @@ data:
       @type prometheus
     </source>
 
+    {{- with .Values.preMatchConfig }}
+    {{ . | nindent 4 }}
+    {{- end }}
+
     {{- range .Values.apps }}
     {{- if .namespace }}
     <match kubernetes.var.log.containers.{{ .name }}-**_{{ .namespace }}_**.log>
@@ -75,6 +79,6 @@ data:
     </match>
     {{- end }}
 
-    {{- range .Values.extraConfig }}
+    {{- range .Values.postMatchConfig }}
     {{ .config | nindent 4 }}
     {{- end }}
