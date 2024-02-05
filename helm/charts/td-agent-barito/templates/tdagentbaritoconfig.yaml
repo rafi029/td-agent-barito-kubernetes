@@ -80,5 +80,5 @@ data:
     {{- end }}
 
     {{- range .Values.postMatchConfig }}
-    {{ .config | nindent 4 }}
+    {{ . | nindent 4 }}
     {{- end }}
