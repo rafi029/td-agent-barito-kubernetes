@@ -1,5 +1,9 @@
 # Changelog
 
+**0.2.25**
+- add `preMatchConfig`
+- change `extraConfig` into `postMatchConfig`
+
 **0.2.24**
 - add priorityClassName parameters
 - expose prometheus port and configure livenessProbe
