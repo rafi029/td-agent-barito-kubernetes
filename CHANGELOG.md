@@ -1,5 +1,8 @@
 # Changelog
 
+**0.2.26**
+- treat `postMatchConfig` as string rather than array
+
 **0.2.25**
 - add `preMatchConfig`
 - change `extraConfig` into `postMatchConfig`

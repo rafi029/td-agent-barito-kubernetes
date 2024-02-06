@@ -79,6 +79,6 @@ data:
     </match>
     {{- end }}
 
-    {{- range .Values.postMatchConfig }}
+    {{- with .Values.postMatchConfig }}
     {{ . | nindent 4 }}
     {{- end }}
